@@ -3,6 +3,7 @@ Mapper = require("./utils/mapper")
 vim.opt.guicursor = ""
 vim.cmd([[highlight CursorLine cterm=underline term=underline ctermbg=NONE guibg=NONE]])
 vim.cmd([[highlight LineNr guibg=NONE guifg=#00faf2]])
+vim.g.copilot_no_tab_map = true
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
@@ -48,26 +49,8 @@ vim.g.mapleader = " "
 Mapper.map("n", "<leader>q", ":q!<CR>", { noremap = true }, "File", "Quit", "Quits out of the file without saving.")
 Mapper.map("n", "<leader>x", ":x<CR>", { noremap = true }, "File", "Save Quit", "Saves the file and then quits.")
 Mapper.map("n", "<leader>w", ":w<CR>", { noremap = true }, "File", "Save", "Saves the file.")
-
--- Navigations
-Mapper.map(
-    "i",
-    "<C-L>",
-    "<Esc>A",
-    { noremap = true },
-    "Move",
-    "Move EOL (Insert)",
-    "Moves cursor to the end of line in insert mode."
-)
-Mapper.map(
-    "i",
-    "<C-H>",
-    "<Esc>I",
-    { noremap = true },
-    "Move",
-    "Move Beginning Of Line (Insert)",
-    "Moves cursor to the beginning of line in insert mode."
-)
+Mapper.map("i", "<S-Space>", "<C-e>", { noremap = true }, "Misc", "Close Popup", "Remap of Ctrl-e to close popup.")
+Mapper.map("n", "<F5>", ":set invrnu<CR>", { noremap = true }, "Misc", "Toggle Line Numbers", "Toggles the line x numbers.")
 
 -- Macro functions
 Mapper.map("n", "<leader>rq", "@q", { noremap = true }, "Macro", "RepeatQ", "Repeats the Q macro.")
@@ -75,7 +58,7 @@ Mapper.map("n", "<leader>rq", "@q", { noremap = true }, "Macro", "RepeatQ", "Rep
 -- Navigate vim panes better
 Mapper.map(
     "n",
-    "<c-k>",
+    "<S-Up>",
     ":wincmd k<CR>",
     { noremap = true },
     "Window",
@@ -84,7 +67,7 @@ Mapper.map(
 )
 Mapper.map(
     "n",
-    "<c-j>",
+    "<S-Down>",
     ":wincmd j<CR>",
     { noremap = true },
     "Window",
@@ -93,7 +76,7 @@ Mapper.map(
 )
 Mapper.map(
     "n",
-    "<c-h>",
+    "<S-Left>",
     ":wincmd h<CR>",
     { noremap = true },
     "Window",
@@ -102,7 +85,7 @@ Mapper.map(
 )
 Mapper.map(
     "n",
-    "<c-l>",
+    "<S-Right>",
     ":wincmd l<CR>",
     { noremap = true },
     "Window",
@@ -112,7 +95,7 @@ Mapper.map(
 
 Mapper.map(
     "n",
-    "<Right>",
+    "<C-Right>",
     ":wincmd L<CR>",
     { noremap = true },
     "Window",
@@ -121,7 +104,7 @@ Mapper.map(
 )
 Mapper.map(
     "n",
-    "<Left>",
+    "<C-Left>",
     ":wincmd H<CR>",
     { noremap = true },
     "Window",
@@ -130,7 +113,7 @@ Mapper.map(
 )
 Mapper.map(
     "n",
-    "<Up>",
+    "<C-Up>",
     ":wincmd K<CR>",
     { noremap = true },
     "Window",
@@ -139,7 +122,7 @@ Mapper.map(
 )
 Mapper.map(
     "n",
-    "<Down>",
+    "<C-Down>",
     ":wincmd J<CR>",
     { noremap = true },
     "Window",
@@ -236,7 +219,7 @@ Mapper.map(
 Mapper.map(
     "n",
     "P",
-    ":put! \"0=`]<CR>",
+    ':put! "0=`]<CR>',
     { noremap = true },
     "Store",
     "Paste Line",
