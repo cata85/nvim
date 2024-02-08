@@ -3,6 +3,8 @@ Mapper = require("./utils/mapper")
 vim.opt.guicursor = ""
 vim.cmd([[highlight CursorLine cterm=underline term=underline ctermbg=NONE guibg=NONE]])
 vim.cmd([[highlight LineNr guibg=NONE guifg=#00faf2]])
+vim.cmd([[highlight Folded guibg=None guifg=None ctermbg=None ctermfg=None]])
+vim.cmd([[highlight FoldColumn guibg=None guifg=None ctermbg=None ctermfg=None]])
 
 vim.opt.nu = true
 vim.opt.relativenumber = true

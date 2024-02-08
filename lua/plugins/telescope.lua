@@ -6,6 +6,7 @@ return {
         "nvim-telescope/telescope.nvim",
         tag = "0.1.5",
         dependencies = { {"nvim-lua/popup.nvim"}, {"nvim-lua/plenary.nvim"} },
+        lazy = false,
         config = function()
             require("telescope").setup({
                 extensions = {
@@ -26,7 +27,7 @@ return {
     {
         "nvim-telescope/telescope-file-browser.nvim",
         dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
-
+        lazy = false,
         config = function()
             require("telescope").setup({
                 extensions = {
@@ -55,6 +56,7 @@ return {
                 dependencies = { "nvim-lua/plenary.nvim" },
             },
         },
+        lazy = false,
         keys = {
             {
                 "<leader>u",
