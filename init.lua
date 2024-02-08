@@ -1,4 +1,5 @@
 vim.g.mapleader = " "
+vim.cmd("nnoremap <Space> <Nop>") -- Stops space from moving cursor. Annoying.
 vim.g.copilot_no_tab_map = true
 vim.g.copilot_assume_mapped = true
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"

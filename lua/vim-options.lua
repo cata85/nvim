@@ -3,7 +3,6 @@ Mapper = require("./utils/mapper")
 vim.opt.guicursor = ""
 vim.cmd([[highlight CursorLine cterm=underline term=underline ctermbg=NONE guibg=NONE]])
 vim.cmd([[highlight LineNr guibg=NONE guifg=#00faf2]])
-vim.g.copilot_no_tab_map = true
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
