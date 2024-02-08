@@ -2,8 +2,7 @@ return {
     {
         "kevinhwang91/nvim-ufo",
         dependencies = { "kevinhwang91/promise-async" },
-        event = "VeryLazy",
-        lazy = false,
+        event = "VimEnter",
         opts = {
             provider_selector = function(bufnr, filetype, buftype)
                 return { "treesitter", "indent" }
@@ -39,7 +38,8 @@ return {
                 return newVirtText
             end
             vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
-            vim.o.foldcolumn = "1" vim.o.foldlevel = 99
+            vim.o.foldcolumn = "0"
+            vim.o.foldlevel = 99
             vim.o.foldlevelstart = 99
             vim.o.foldenable = true
             vim.cmd([[hi default UfoFoldedFg guifg=Normal.foreground]])
@@ -61,10 +61,6 @@ return {
             Mapper.map("n", "zj", function() require("ufo").goNextClosedFold() end, { noremap = true }, "UFO", "Goto Next Fold", " 󱃄 Goto Next Fold")
             Mapper.map("n", "zr", function() require("ufo").openFoldsExceptKinds { "comment", "imports" } end, { noremap = true }, "UFO", "Open All Regular Folds", " 󱃄 Open All Regular Folds")
             Mapper.map("n", "zR", function() require("ufo").openFoldsExceptKinds {} end, { noremap = true }, "UFO", "Open All Folds", " 󱃄 Open All Folds")
-            Mapper.map("n", "z1", function() require("ufo").closeFoldsWith(1) end, { noremap = true }, "UFO", "Close L1 Folds", " 󱃄 Close L1 Folds")
-            Mapper.map("n", "z2", function() require("ufo").closeFoldsWith(2) end, { noremap = true }, "UFO", "Close L2 Folds", " 󱃄 Close L2 Folds")
-            Mapper.map("n", "z3", function() require("ufo").closeFoldsWith(3) end, { noremap = true }, "UFO", "Close L3 Folds", " 󱃄 Close L3 Folds")
-            Mapper.map("n", "z4", function() require("ufo").closeFoldsWith(4) end, { noremap = true }, "UFO", "Close L4 Folds", " 󱃄 Close L4 Folds")
 
             Mapper.map("n", "K", function()
                 local winid = ufo.peekFoldedLinesUnderCursor(true)
