@@ -3,6 +3,8 @@ return {
         "kevinhwang91/nvim-ufo",
         dependencies = { "kevinhwang91/promise-async" },
         event = "VimEnter",
+        lazy = false,
+        priority = 101,
         opts = {
             provider_selector = function(bufnr, filetype, buftype)
                 return { "treesitter", "indent" }

@@ -5,6 +5,7 @@ vim.cmd([[highlight CursorLine cterm=underline term=underline ctermbg=NONE guibg
 vim.cmd([[highlight LineNr guibg=NONE guifg=#00faf2]])
 vim.cmd([[highlight Folded guibg=None guifg=None ctermbg=None ctermfg=None]])
 vim.cmd([[highlight FoldColumn guibg=None guifg=None ctermbg=None ctermfg=None]])
+vim.cmd([[highlight CopilotSuggestion guifg=#00ddff]])
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
@@ -52,6 +53,10 @@ Mapper.map("n", "<leader>x", ":x<CR>", { noremap = true }, "File", "Save Quit", 
 Mapper.map("n", "<leader>w", ":w<CR>", { noremap = true }, "File", "Save", "Saves the file.")
 Mapper.map("i", "<S-Space>", "<C-e>", { noremap = true }, "Misc", "Close Popup", "Remap of Ctrl-e to close popup.")
 Mapper.map("n", "<F5>", ":set invrnu<CR>", { noremap = true }, "Misc", "Toggle Line Numbers", "Toggles the line x numbers.")
+Mapper.map("n", ">", ">>", { noremap = true }, "Move", "Indent Right", "Indents the line to the right.")
+Mapper.map("n", "<", "<<", { noremap = true }, "Move", "Indent Left", "Indents the line to the left.")
+Mapper.map("v", ">", ">gv", { noremap = true }, "Move", "Indent Right (Visual)", "Indents the highlighted area to the right.")
+Mapper.map("v", "<", "<gv", { noremap = true }, "Move", "Indent Left (Visual)", "Indents the highlighted area to the left.")
 
 -- Macro functions
 Mapper.map("n", "<leader>rq", "@q", { noremap = true }, "Macro", "RepeatQ", "Repeats the Q macro.")

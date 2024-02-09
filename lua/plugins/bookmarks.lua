@@ -3,6 +3,7 @@ return {
         "tomasky/bookmarks.nvim",
         priority = 100,
         event = "VimEnter",
+        lazy = false,
         config = function()
             local Mapper = require("./utils/mapper")
             require("bookmarks").setup({
@@ -16,6 +17,7 @@ return {
                 },
                 on_attach = function(bufnr)
                     local bm = require("bookmarks")
+                    local actions = require("bookmarks.actions")
                     Mapper.map(
                         "n",
                         "mm",
@@ -43,19 +45,27 @@ return {
                         "Clear Bookmarks",
                         "Clean all marks in local buffer."
                     )
+                    local next_refresh = function()
+                        actions.refresh()
+                        bm.bookmark_next()
+                    end
                     Mapper.map(
                         "n",
                         "mn",
-                        bm.bookmark_next,
+                        next_refresh,
                         { noremap = true },
                         "Bookmarks",
                         "Next Bookmark",
                         "Jump to next mark in local buffer."
                     )
+                    local prev_refresh = function()
+                        actions.refresh()
+                        bm.bookmark_prev()
+                    end
                     Mapper.map(
                         "n",
                         "mp",
-                        bm.bookmark_prev,
+                        prev_refresh,
                         { noremap = true },
                         "Bookmarks",
                         "Previous Bookmark",

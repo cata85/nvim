@@ -15,7 +15,7 @@ return {
             "nvim-treesitter/nvim-treesitter",
             "folke/neodev.nvim",
         },
-        lazy = true,
+        lazy = false,
         opts = {
             status = { virtual_text = true },
             icons = {
