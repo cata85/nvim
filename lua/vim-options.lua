@@ -43,6 +43,8 @@ vim.wo.number = true
 
 vim.g.mapleader = " "
 
+vim.g.mkdp_auto_start = 1
+
 --------------------------------------------------------
 -- map(mode, keys, cmd, opts, category, id, description)
 --------------------------------------------------------
