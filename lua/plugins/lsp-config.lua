@@ -35,7 +35,7 @@ return {
                 vim.keymap.set("n", "<leader>vd", function()
                     vim.lsp.diagnostics.open_float()
                 end, opts)
-                vim.keymap.set("n", "[d", function()
+                vim.keymap.set("n", "]d", function()
                     vim.lsp.diagnostics.goto_next()
                 end, opts)
                 vim.keymap.set("n", "[d", function()

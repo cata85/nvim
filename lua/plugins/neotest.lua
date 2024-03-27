@@ -54,6 +54,7 @@ return {
                         experimental = {
                             test_table = true,
                         },
+                        args = { "-count=12", "-timeout=300s" },
                     }),
                 },
                 opts,

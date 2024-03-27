@@ -49,7 +49,7 @@ vim.g.mkdp_auto_start = 1
 -- map(mode, keys, cmd, opts, category, id, description)
 --------------------------------------------------------
 
--- File functions
+-- File/Misc functions
 Mapper.map("n", "<leader>q", ":q!<CR>", { noremap = true }, "File", "Quit", "Quits out of the file without saving.")
 Mapper.map("n", "<leader>x", ":x<CR>", { noremap = true }, "File", "Save Quit", "Saves the file and then quits.")
 Mapper.map("n", "<leader>w", ":w<CR>", { noremap = true }, "File", "Save", "Saves the file.")
@@ -59,6 +59,8 @@ Mapper.map("n", ">", ">>", { noremap = true }, "Move", "Indent Right", "Indents 
 Mapper.map("n", "<", "<<", { noremap = true }, "Move", "Indent Left", "Indents the line to the left.")
 Mapper.map("v", ">", ">gv", { noremap = true }, "Move", "Indent Right (Visual)", "Indents the highlighted area to the right.")
 Mapper.map("v", "<", "<gv", { noremap = true }, "Move", "Indent Left (Visual)", "Indents the highlighted area to the left.")
+Mapper.map("n", "v", "V", { noremap = true }, "Visual", "Visual Line", "Changes to visual line mode.")
+Mapper.map("n", "V", "v", { noremap = true }, "Visual", "Visual Block", "Changes to visual block mode.")
 
 -- Macro functions
 Mapper.map("n", "<leader>rq", "@q", { noremap = true }, "Macro", "RepeatQ", "Repeats the Q macro.")

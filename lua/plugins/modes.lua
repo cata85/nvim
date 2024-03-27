@@ -6,12 +6,12 @@ return {
             colors = {
                 copy = "#fa0000",
                 delete = "#c75c6a",
-                insert = "#3d4c80",
+                insert = "#3d96a5",
                 visual = "#f0fc00",
             },
 
             -- Set opacity for cursorline and number background
-            line_opacity = 0.3,
+            line_opacity = 0.4,
 
             -- Enable cursor highlights
             set_cursor = true,

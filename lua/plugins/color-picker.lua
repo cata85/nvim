@@ -15,6 +15,7 @@ return {
                 ["text_highlight_group"] = "Normal", --default
             })
             Mapper.map("n", "<leader>pc", "<cmd>PickColor<CR>", { noremap = true, silent = true }, "Color Picker","Color Picker", "Color Picker")
+            Mapper.map("n", "<C-e>", "<cmd>PickColor<CR>", { noremap = true, silent = true }, "Color Picker","Color Picker (Control map)", "Color Picker")
             Mapper.map("i", "<C-e>", "<cmd>PickColorInsert<CR>", { noremap = true, silent = true }, "Color Picker","Color Picker", "Color Picker")
             vim.cmd("highlight FloatBorder guibg=NONE")
         end,
