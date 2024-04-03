@@ -6,6 +6,7 @@ vim.cmd([[highlight LineNr guibg=NONE guifg=#00faf2]])
 vim.cmd([[highlight Folded guibg=None guifg=None ctermbg=None ctermfg=None]])
 vim.cmd([[highlight FoldColumn guibg=None guifg=None ctermbg=None ctermfg=None]])
 vim.cmd([[highlight CopilotSuggestion guifg=#00ddff]])
+vim.cmd([[hi Folded guibg=#61779a]])
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
@@ -61,6 +62,7 @@ Mapper.map("v", ">", ">gv", { noremap = true }, "Move", "Indent Right (Visual)",
 Mapper.map("v", "<", "<gv", { noremap = true }, "Move", "Indent Left (Visual)", "Indents the highlighted area to the left.")
 Mapper.map("n", "v", "V", { noremap = true }, "Visual", "Visual Line", "Changes to visual line mode.")
 Mapper.map("n", "V", "v", { noremap = true }, "Visual", "Visual Block", "Changes to visual block mode.")
+Mapper.map("n", ";;", "za", { noremap = true }, "Fold", "Toggle Fold", "Toggles the fold.")
 
 -- Macro functions
 Mapper.map("n", "<leader>rq", "@q", { noremap = true }, "Macro", "RepeatQ", "Repeats the Q macro.")
@@ -315,7 +317,7 @@ Mapper.map(
 
 Mapper.map(
     "n",
-    "<leader>h",
+    "<leader>nh",
     ":nohlsearch<CR>",
     { noremap = true },
     "Misc",
