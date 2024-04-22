@@ -56,8 +56,8 @@ Mapper.map("n", "<leader>x", ":x<CR>", { noremap = true }, "File", "Save Quit", 
 Mapper.map("n", "<leader>w", ":w<CR>", { noremap = true }, "File", "Save", "Saves the file.")
 Mapper.map("i", "<S-Space>", "<C-e>", { noremap = true }, "Misc", "Close Popup", "Remap of Ctrl-e to close popup.")
 Mapper.map("n", "<F5>", ":set invrnu<CR>", { noremap = true }, "Misc", "Toggle Line Numbers", "Toggles the line x numbers.")
-Mapper.map({"n", "x"}, ">", ">>", { noremap = true }, "Move", "Indent Right", "Indents the line to the right.")
-Mapper.map({"n", "x"}, "<", "<<", { noremap = true }, "Move", "Indent Left", "Indents the line to the left.")
+Mapper.map({"n", "x"}, ">", "> gv", { noremap = true }, "Move", "Indent Right", "Indents the line to the right.")
+Mapper.map({"n", "x"}, "<", "< gv", { noremap = true }, "Move", "Indent Left", "Indents the line to the left.")
 Mapper.map("n", "v", "V", { noremap = true }, "Visual", "Visual Line", "Changes to visual line mode.")
 Mapper.map("n", "V", "v", { noremap = true }, "Visual", "Visual Block", "Changes to visual block mode.")
 Mapper.map("n", ";;", "za", { noremap = true }, "Fold", "Toggle Fold", "Toggles the fold.")
@@ -141,25 +141,25 @@ Mapper.map(
 )
 
 -- Move blocks of code around in Visual Mode
--- Mapper.map(
---     "x",
---     "J",
---     ":m '>+1<CR>gv=gv",
---     { noremap = true, silent = true },
---     "Move",
---     "Move Code Block Down",
---     "Moves the Block of selected code down."
--- )
--- vim.keymap.set()
--- Mapper.map(
---     "x",
---     "K",
---     ":m '<-2<CR>gv=gv",
---     { noremap = true, silent = true },
---     "Move",
---     "Move Code Block Up",
---     "Moves the Block of selected code up."
--- )
+Mapper.map(
+    "x",
+    "J",
+    ":m '>+1<CR>gv=gv",
+    { noremap = true, silent = true },
+    "Move",
+    "Move Code Block Down",
+    "Moves the Block of selected code down."
+)
+
+Mapper.map(
+    "x",
+    "K",
+    ":m '<-2<CR>gv=gv",
+    { noremap = true, silent = true },
+    "Move",
+    "Move Code Block Up",
+    "Moves the Block of selected code up."
+)
 
 -- Moves line below to line with space, leaves cursor same position
 Mapper.map("n", "J", "mzJ`z", { noremap = true }, "", "", "")

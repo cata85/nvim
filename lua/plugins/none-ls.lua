@@ -9,6 +9,7 @@ return {
                 require("none-ls.diagnostics.cpplint"),
                 require("none-ls.formatting.jq"),
                 require("none-ls.diagnostics.eslint_d"),
+                require("none-ls.code_actions.eslint"),
                 null_ls.builtins.formatting.stylua,
                 null_ls.builtins.formatting.prettier,
                 -- null_ls.builtins.diagnostics.erb_lint,
