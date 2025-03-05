@@ -14,6 +14,7 @@ return {
             "antoinemadec/FixCursorHold.nvim",
             "nvim-treesitter/nvim-treesitter",
             "folke/neodev.nvim",
+            "nvim-neotest/nvim-nio",
         },
         lazy = false,
         opts = {

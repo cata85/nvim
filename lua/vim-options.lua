@@ -6,6 +6,7 @@ vim.cmd([[highlight LineNr guibg=NONE guifg=#00faf2]])
 vim.cmd([[highlight Folded guibg=None guifg=None ctermbg=None ctermfg=None]])
 vim.cmd([[highlight FoldColumn guibg=None guifg=None ctermbg=None ctermfg=None]])
 vim.cmd([[highlight CopilotSuggestion guifg=#00ddff]])
+vim.cmd([[hi Folded guibg=#2C3138 gui=underline]])
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
@@ -55,12 +56,11 @@ Mapper.map("n", "<leader>x", ":x<CR>", { noremap = true }, "File", "Save Quit", 
 Mapper.map("n", "<leader>w", ":w<CR>", { noremap = true }, "File", "Save", "Saves the file.")
 Mapper.map("i", "<S-Space>", "<C-e>", { noremap = true }, "Misc", "Close Popup", "Remap of Ctrl-e to close popup.")
 Mapper.map("n", "<F5>", ":set invrnu<CR>", { noremap = true }, "Misc", "Toggle Line Numbers", "Toggles the line x numbers.")
-Mapper.map("n", ">", ">>", { noremap = true }, "Move", "Indent Right", "Indents the line to the right.")
-Mapper.map("n", "<", "<<", { noremap = true }, "Move", "Indent Left", "Indents the line to the left.")
-Mapper.map("v", ">", ">gv", { noremap = true }, "Move", "Indent Right (Visual)", "Indents the highlighted area to the right.")
-Mapper.map("v", "<", "<gv", { noremap = true }, "Move", "Indent Left (Visual)", "Indents the highlighted area to the left.")
+Mapper.map({"n", "x"}, ">", "> gv", { noremap = true }, "Move", "Indent Right", "Indents the line to the right.")
+Mapper.map({"n", "x"}, "<", "< gv", { noremap = true }, "Move", "Indent Left", "Indents the line to the left.")
 Mapper.map("n", "v", "V", { noremap = true }, "Visual", "Visual Line", "Changes to visual line mode.")
 Mapper.map("n", "V", "v", { noremap = true }, "Visual", "Visual Block", "Changes to visual block mode.")
+Mapper.map("n", ";;", "za", { noremap = true }, "Fold", "Toggle Fold", "Toggles the fold.")
 
 -- Macro functions
 Mapper.map("n", "<leader>rq", "@q", { noremap = true }, "Macro", "RepeatQ", "Repeats the Q macro.")
@@ -142,19 +142,20 @@ Mapper.map(
 
 -- Move blocks of code around in Visual Mode
 Mapper.map(
-    "v",
+    "x",
     "J",
     ":m '>+1<CR>gv=gv",
-    { noremap = true },
+    { noremap = true, silent = true },
     "Move",
     "Move Code Block Down",
     "Moves the Block of selected code down."
 )
+
 Mapper.map(
-    "v",
+    "x",
     "K",
     ":m '<-2<CR>gv=gv",
-    { noremap = true },
+    { noremap = true, silent = true },
     "Move",
     "Move Code Block Up",
     "Moves the Block of selected code up."
@@ -315,7 +316,7 @@ Mapper.map(
 
 Mapper.map(
     "n",
-    "<leader>h",
+    "<leader>nh",
     ":nohlsearch<CR>",
     { noremap = true },
     "Misc",

@@ -4,7 +4,7 @@ return {
 		local Mapper = require(".utils.mapper")
 		Mapper.map(
 			"i",
-			"<C-Space>",
+			"<C-j>",
 			'copilot#Accept("<CR>")',
 			{ expr = true, replace_keycodes = false, noremap = true },
 			"Copilot",
@@ -13,7 +13,7 @@ return {
 		)
 		Mapper.map(
 			"i",
-			"<C-j>",
+			"<C-Right>",
 			"<Plug>(copilot-next)",
 			{ noremap = true },
 			"Copilot",
@@ -22,7 +22,7 @@ return {
 		)
 		Mapper.map(
 			"i",
-			"<C-k>",
+			"<C-Left>",
 			"<Plug>(copilot-previous)",
 			{ noremap = true },
 			"Copilot",
