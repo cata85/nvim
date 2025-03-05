@@ -5,7 +5,7 @@ return {
         config = function()
             require("nvim-mapper").setup({
                 no_map = false,
-                search_path = os.getenv("HOME") .. "/.config/nvim/lua",
+                search_path = "$HOME/.config/nvim/lua",
                 action_on_enter = "execute" -- or "definition"
             })
         end,
